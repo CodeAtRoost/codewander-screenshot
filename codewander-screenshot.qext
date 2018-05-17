@@ -1,0 +1,14 @@
+{
+	"name": "codewander screenshot",
+	"description": "Take screenshots of qvobjects",
+	"type": "visualization",
+	"version": "1.0.0",
+	"author": "codewander.com",
+	"homepage": "",
+	"keywords": "qlik-sense, visualization",
+	"license": "MIT",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}

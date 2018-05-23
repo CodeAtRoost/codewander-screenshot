@@ -5,10 +5,39 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 
 		return {
 			template: template,
+			
 			support: {
 				snapshot: true,
 				export: true,
 				exportData: false
+			},
+			definition: {
+				type: "items",
+				component: "accordion",
+				items: {
+					
+					settings:{
+						uses: "settings",
+						items:{
+						Container:{
+						ref:"Container",
+						label: "Container Identifier",
+						type: "string",
+						defaultValue:".qvt-sheet"						
+						},
+						bgColor:{
+						ref:"bgColor",
+						label: "Background Color (hex)",
+						type: "string",
+						defaultValue:"#ffff"						
+						}
+						}
+					
+					},
+					sorting: {
+						uses: "sorting"
+					}
+				}
 			},
 			paint: function () {
 				return qlik.Promise.resolve();
@@ -45,9 +74,12 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 				$('.qv-object').prepend('<div class="qv-object-codewander-screenshot codewander-ssbutton"><button class="btn btn-primary active" ><i class="fas fa-camera"></i>Take screenshot</button></div>');
 				$('.qv-object-codewander-screenshot').find('.codewander-ssbutton').first().remove();
 				$('.codewander-ssbutton').click(function(){		
+					
+					var containerIdentifier= $scope.layout.Container == null ? ".qvt-sheet" : $scope.layout.Container;
+					var bgColor= $scope.layout.bgColor == null ? "#ffff" : $scope.layout.bgColor;
 					var e= $(this).parent().first();
 					$(e).append('<span class="codewander-watermark">screenshot by www.codewander.com</span>');
-							domtoimage.toPng(e[0],{ height: $(e[0]).height(),width:$(e[0]).width(),filter:convert} ).then(function(i){
+							domtoimage.toPng(e[0],{ height: $(e[0]).height(),width:$(e[0]).width(),bgcolor:bgColor,filter:convert} ).then(function(i){
 								var sshot= new Image();
 								sshot.src=i;								
 								saveBase64AsFile(i,"codewander.com-chart.png");
@@ -64,13 +96,14 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 				}
 				$scope.fullsheet = function(){
 				
-				
-					var divs= $(document).find(".qvt-sheet");
+					var containerIdentifier= $scope.layout.Container == null ? ".qvt-sheet" : $scope.layout.Container;
+					var bgColor= $scope.layout.bgColor == null ? "#ffff" : $scope.layout.bgColor;
+					var divs= $(document).find(containerIdentifier);
 					
 					
 						$.each(divs,function(i,e){
 							$(e).append('<span class="codewander-watermark">screenshot by www.codewander.com</span>');
-							domtoimage.toPng(e,{ height: $(e).height(),width:$(e).width(),filter:convert} ).then(function(i){
+							domtoimage.toPng(e,{ height: $(e).height(),width:$(e).width(),bgcolor:bgColor,filter:convert} ).then(function(i){
 								var sshot= new Image();
 								sshot.src=i;
 								saveBase64AsFile(i,"codewander-fullsheet.PNG");	

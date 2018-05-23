@@ -6,6 +6,8 @@ Does not work in safari or IE.
 
 Uses Dom-to-image to take screenshot of the qvobjects and downloads it as PNG.
 
+<b><u>KNOWN LIMITATION: This extension does not work in IE and Safari due to the limitations of dom-to-image library.</u></b>
+
 Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
 
 <h1>Features</h1>

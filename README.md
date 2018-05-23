@@ -6,6 +6,8 @@ Does not work in safari or IE.
 
 Uses Dom-to-image to take screenshot of the qvobjects and downloads it as PNG.
 
+Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
+
 <h1>Features</h1>
 <h2>Take screenshot of a single chart component (Qliksense Extensions or Native Components)</h2>
 <ul>

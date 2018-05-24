@@ -9,6 +9,7 @@ Uses Dom-to-image to take screenshot of the qvobjects and downloads it as PNG.
 <b><u>KNOWN LIMITATION: This extension does not work in IE and Safari due to the limitations of dom-to-image library.</u></b>
 
 Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
+Demo: Screenshot in Mashup: https://youtu.be/PVgjHb3cN3U
 
 <h1>Features</h1>
 <h2>Take screenshot of a single chart component (Qliksense Extensions or Native Components)</h2>

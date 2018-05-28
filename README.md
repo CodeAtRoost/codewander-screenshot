@@ -12,7 +12,7 @@ Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
 Demo: Screenshot in Mashup: https://youtu.be/PVgjHb3cN3U
 
 <div style="background-color:green">
-<a href="https://github.com/CodeAtRoost/codewander-screenshot/archive/1.0.zip">Download</a>
+<a href="https://github.com/CodeAtRoost/codewander-screenshot/archive/1.1.zip">Download</a>
  </div>
 
 <h1>Features</h1>

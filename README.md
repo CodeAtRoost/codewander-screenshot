@@ -6,7 +6,9 @@ Does not work in safari or IE.
 
 Uses Dom-to-image to take screenshot of the qvobjects and downloads it as PNG.
 
-<b><u>KNOWN LIMITATION: This extension does not work in IE and Safari due to the limitations of dom-to-image library.</u></b>
+**Update: 2/13/2020** Fixed the full screen mode bug
+
+**KNOWN LIMITATION: This extension does not work in IE and Safari due to the limitations of dom-to-image library.**
 
 Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
 Demo: Screenshot in Mashup: https://youtu.be/PVgjHb3cN3U
@@ -15,8 +17,8 @@ Demo: Screenshot in Mashup: https://youtu.be/PVgjHb3cN3U
 <a href="https://github.com/CodeAtRoost/codewander-screenshot/archive/1.1.zip">Download</a>
  </div>
 
-<h1>Features</h1>
-<h2>Take screenshot of a single chart component (Qliksense Extensions or Native Components)</h2>
+# <h1>Features</h1>
+## <h2>Take screenshot of a single chart component (Qliksense Extensions or Native Components)</h2>
 <ul>
  	<li>You should see the download a chart icon as part of the extension.</li>
 </ul>

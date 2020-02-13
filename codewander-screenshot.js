@@ -96,7 +96,8 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 				}
 				$scope.fullsheet = function(){
 				
-					var containerIdentifier= $scope.layout.Container == null ? ".qvt-sheet" : $scope.layout.Container;
+					//var containerIdentifier= $scope.layout.Container == null ? ".qvt-sheet" : $scope.layout.Container;
+					var containerIdentifier=  ".qvt-sheet";
 					var bgColor= $scope.layout.bgColor == null ? "#ffff" : $scope.layout.bgColor;
 					var divs= $(document).find(containerIdentifier);
 					

@@ -11,6 +11,10 @@ Uses Dom-to-image to take screenshot of the qvobjects and downloads it as PNG.
 Demo: Screenshot in App: https://www.youtube.com/embed/vi6175O6McM
 Demo: Screenshot in Mashup: https://youtu.be/PVgjHb3cN3U
 
+<div style="background-color:green">
+<a href="https://github.com/CodeAtRoost/codewander-screenshot/archive/1.1.zip">Download</a>
+ </div>
+
 <h1>Features</h1>
 <h2>Take screenshot of a single chart component (Qliksense Extensions or Native Components)</h2>
 <ul>

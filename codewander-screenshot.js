@@ -1,4 +1,4 @@
-define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bfc00a6c5bba731027820199acd7b0a6e92149d8/dist/dom-to-image.min.js"],
+define( ["qlik", "text!./template.html","//cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"],
 	function ( qlik, template,toImage ) {
 	$('<link rel="stylesheet" type="text/css" href="/extensions/codewander-screenshot/css/main.css">').appendTo("head");
 	$('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">').appendTo("head");
@@ -19,6 +19,19 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 					settings:{
 						uses: "settings",
 						items:{
+						watermarkText:{
+						ref:"watermarkText",
+						label: "Watermark Text",
+						type: "string",
+						defaultValue:"screenshot by codewander.com",
+						expression: "optional"
+						},
+						watermarkTextColor:{
+						ref:"watermarkTextColor",
+						label: "Watermark Text Color (hex)",
+						type: "string",
+						defaultValue:"#00000"						
+						},
 						Container:{
 						ref:"Container",
 						label: "Container Identifier",
@@ -77,8 +90,10 @@ define( ["qlik", "text!./template.html","//cdn.rawgit.com/tsayen/dom-to-image/bf
 					
 					var containerIdentifier= $scope.layout.Container == null ? ".qvt-sheet" : $scope.layout.Container;
 					var bgColor= $scope.layout.bgColor == null ? "#ffff" : $scope.layout.bgColor;
+					var watermarkText= $scope.layout.watermarkText == null ? "screenshot by www.codewander.com" : $scope.layout.watermarkText;
+					var watermarkTextColor= $scope.layout.watermarkTextColor == null ? "#00000" : $scope.layout.watermarkTextColor;					
 					var e= $(this).parent().first();
-					$(e).append('<span class="codewander-watermark">screenshot by www.codewander.com</span>');
+					$(e).append('<span class="codewander-watermark" style="color:'+ watermarkTextColor +'">'+watermarkText +'</span>');
 							domtoimage.toPng(e[0],{ height: $(e[0]).height(),width:$(e[0]).width(),bgcolor:bgColor,filter:convert} ).then(function(i){
 								var sshot= new Image();
 								sshot.src=i;								
